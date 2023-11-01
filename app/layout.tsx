@@ -2,7 +2,6 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { roboto } from "@/components/fonts";
 import type { Metadata } from "next";
 import "./globals.css";
-import { Navbar } from "@/components/navbar";
 
 export const metadata: Metadata = {
   title: "Create By Jephthah",
@@ -23,7 +22,6 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
           {children}
         </ThemeProvider>
       </body>
