@@ -9,11 +9,11 @@ export function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="bg-accent h-full px-4">
-      <div className="font-extrabold text-3xl mt-6 mr-4 text-center lg:mt-4">
+    <aside className="h-full px-4 bg-accent">
+      <div className="mt-6 mr-4 text-3xl font-extrabold text-center lg:mt-4">
         𝔍𝔬𝔟ℭ𝔬𝔪𝔭𝔞𝔰𝔰
       </div>
-      <ul className="flex flex-col gap-8 mt-10 items-center justify-center">
+      <ul className="flex flex-col items-center justify-center gap-8 mt-10">
         {sidebarLinks.map((link) => (
           <Link
             key={link.href}
