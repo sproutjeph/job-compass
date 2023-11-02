@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { sidebarLinks } from "./constants/consants";
+import { sidebarLinks } from "../constants/consants";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
 

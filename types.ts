@@ -1,7 +1,9 @@
 export interface IJob {
+  id: string;
   company: string;
-  posistion: string;
-  status: "Interviewed" | "Declined" | "Pending";
+  position: string;
+  status: string;
   jobType: string;
   location?: string;
+  date: string;
 }

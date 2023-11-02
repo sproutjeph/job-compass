@@ -9,7 +9,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       </div>
       <main>
         <Navbar />
-        <div className="lg:pl-64">{children}</div>
+        <div className=" lg:pl-64">{children}</div>
       </main>
     </section>
   );
