@@ -7,11 +7,11 @@ const MobileSidebar = () => {
   return (
     <Sheet>
       <SheetTrigger>
-        <div className=" lg:hidden">
+        <div className="lg:hidden">
           <Menu />
         </div>
       </SheetTrigger>
-      <SheetContent side="left" className="p-0 w-[200px]">
+      <SheetContent side="left" className="p-0  w-[250px] bg-accent">
         <Sidebar />
       </SheetContent>
     </Sheet>
