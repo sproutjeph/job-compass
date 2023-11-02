@@ -6,4 +6,5 @@ export interface IJob {
   jobType: string;
   location?: string;
   date: string;
+  jobLink?: string;
 }

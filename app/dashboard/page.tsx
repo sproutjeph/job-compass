@@ -10,6 +10,7 @@ export default function Page() {
     jobType: "Internship",
     location: "London",
     date: "2022-12-06",
+    jobLink: "https://www.j-sprout.com",
   };
   return (
     <main className="p-4 mx-auto max-w-7xl">

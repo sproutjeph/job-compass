@@ -54,7 +54,8 @@ async function seedJobs() {
         status VARCHAR(255) NOT NULL,
         jobType VARCHAR(255) NOT NULL,
         location VARCHAR(255),
-         date DATE DEFAULT NOW()
+         date DATE DEFAULT NOW(),
+         jobLink VARCHAR(255)
       );
     `;
 
@@ -65,7 +66,7 @@ async function seedJobs() {
       jobs.map(async (job) => {
         return sql`
         INSERT INTO jobs (id, company, position, status, jobType, location, date)
-        VALUES (${job.id}, ${job.company}, ${job.position}, ${job.status}, ${job.jobType}, ${job.location}, ${job.date});
+        VALUES (${job.id}, ${job.company}, ${job.position}, ${job.status}, ${job.jobType}, ${job.location}, ${job.date}, ${job.jobLink});
       `;
       })
     );
