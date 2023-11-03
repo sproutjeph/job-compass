@@ -1,9 +1,7 @@
-import { fetchJobs } from "@/lib/actions";
 import JobCard from "./job-card";
+import { IJob } from "@/types";
 
-const JobCards = async () => {
-  const jobs = await fetchJobs();
-
+const JobCards = ({ jobs }: { jobs: IJob[] }) => {
   return (
     <section>
       <ul className="grid items-center gap-4 md:grid-cols-2">

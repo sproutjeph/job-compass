@@ -1,7 +1,9 @@
 import { JobCardSSkeleton } from "@/components/skeletons";
-import JobCards from "@/components/job-cards";
-import React, { Suspense } from "react";
+import Pagination from "@/components/pagination";
 import JobSearch from "@/components/job-search";
+import JobCards from "@/components/job-cards";
+import { fetchJobs } from "@/lib/actions";
+import React, { Suspense } from "react";
 
 export default async function Page({
   searchParams,
@@ -11,23 +13,23 @@ export default async function Page({
     page?: string;
   };
 }) {
-  const query = searchParams?.query || "";
   const page = searchParams?.page || "1";
+  const query = searchParams?.query || "";
 
-  console.log(query);
-  console.log(page);
+  const jobs = await fetchJobs(Number(page), query);
 
   return (
     <main className="p-4 mx-auto max-w-7xl">
       <div className="grid sm:grid-cols-3 gap-x-4 lg:grid-cols-4">
         <JobSearch placeHolder="Company Name" />
-        <JobSearch placeHolder="Location" />
-        <JobSearch placeHolder="Job Title" />
-        <JobSearch placeHolder="Job Status" />
+        {/* <JobSearch placeHolder="Location" /> */}
+        {/* <JobSearch placeHolder="Job Title" /> */}
+        {/* <JobSearch placeHolder="Job Status" /> */}
       </div>
       <Suspense fallback={<JobCardSSkeleton />}>
-        <JobCards />
+        <JobCards jobs={jobs?.jobs!} />
       </Suspense>
+      <Pagination totalPages={jobs?.pages!} />
     </main>
   );
 }

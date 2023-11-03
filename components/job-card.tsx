@@ -14,7 +14,7 @@ const JobCard: FC<JobCardProps> = ({ job }) => {
   return (
     <Card className="">
       <CardHeader className="flex-row items-center gap-4 p-4">
-        <div className="flex items-center justify-center text-3xl font-black text-white rounded-md w-14 h-14 bg-primary">
+        <div className="flex items-center justify-center w-12 h-12 text-2xl font-extrabold text-white rounded-md bg-primary">
           {job.company.charAt(0)}
         </div>
         <div className="text-sm ">
