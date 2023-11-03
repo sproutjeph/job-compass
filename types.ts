@@ -3,8 +3,8 @@ export interface IJob {
   company: string;
   position: string;
   status: string;
-  jobType: string;
+  jobtype: string;
   location?: string;
-  date: string;
-  jobLink?: string;
+  date: Date;
+  joblink?: string;
 }

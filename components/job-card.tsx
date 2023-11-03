@@ -4,6 +4,7 @@ import { Briefcase, Calendar, Send } from "lucide-react";
 import { Separator } from "./ui/separator";
 import { Button } from "./ui/button";
 import { FC } from "react";
+import { formatDateToYYYYMMDD } from "@/lib/utils";
 
 interface JobCardProps {
   job: IJob;
@@ -29,11 +30,11 @@ const JobCard: FC<JobCardProps> = ({ job }) => {
         </div>
         <div className="flex gap-2">
           <Calendar />
-          <h4>{"date"}</h4>
+          <h4>{formatDateToYYYYMMDD(job?.date)}</h4>
         </div>
         <div className="flex gap-2">
           <Briefcase />
-          <h4>{job.jobType}</h4>
+          <h4>{job.jobtype}</h4>
         </div>
 
         <div className="flex items-center justify-center py-1 text-white bg-black rounded-md dark:bg-white dark:text-black w-28">
@@ -45,7 +46,7 @@ const JobCard: FC<JobCardProps> = ({ job }) => {
         <Button size="sm" variant="destructive">
           Delete
         </Button>
-        <a href={job.jobLink} target="_blank">
+        <a href={job.joblink} target="_blank">
           <Button size="sm" variant="secondary" className="ml-16">
             Job Link
           </Button>

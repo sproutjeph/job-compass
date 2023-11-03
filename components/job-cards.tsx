@@ -4,8 +4,6 @@ import JobCard from "./job-card";
 const JobCards = async () => {
   const jobs = await fetchJobs();
 
-  console.log(jobs);
-
   return (
     <section>
       <ul className="grid items-center gap-4 md:grid-cols-2">

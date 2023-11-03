@@ -47,6 +47,8 @@ export function JobCardSSkeleton() {
       <JobCardSkeleton />
       <JobCardSkeleton />
       <JobCardSkeleton />
+      <JobCardSkeleton />
+      <JobCardSkeleton />
     </div>
   );
 }
