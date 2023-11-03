@@ -1,10 +1,13 @@
+import { JobCardSkeleton } from "@/components/skeletons";
 import JobCards from "@/components/job-cards";
-import React from "react";
+import React, { Suspense } from "react";
 
 export default function Page() {
   return (
     <main className="p-4 mx-auto max-w-7xl">
-      <JobCards />
+      <Suspense fallback={<JobCardSkeleton />}>
+        <JobCards />
+      </Suspense>
     </main>
   );
 }
