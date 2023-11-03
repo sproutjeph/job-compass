@@ -11,7 +11,7 @@ interface JobCardProps {
 
 const JobCard: FC<JobCardProps> = ({ job }) => {
   return (
-    <Card className="max-w-lg">
+    <Card className="">
       <CardHeader className="flex-row items-center gap-4 p-4">
         <div className="flex items-center justify-center text-3xl font-black text-white rounded-md w-14 h-14 bg-primary">
           {job.company.charAt(0)}
@@ -29,7 +29,7 @@ const JobCard: FC<JobCardProps> = ({ job }) => {
         </div>
         <div className="flex gap-2">
           <Calendar />
-          <h4>{job.date}</h4>
+          <h4>{"date"}</h4>
         </div>
         <div className="flex gap-2">
           <Briefcase />
@@ -46,7 +46,7 @@ const JobCard: FC<JobCardProps> = ({ job }) => {
           Delete
         </Button>
         <a href={job.jobLink} target="_blank">
-          <Button size="sm" variant="secondary" className="ml-28">
+          <Button size="sm" variant="secondary" className="ml-16">
             Job Link
           </Button>
         </a>

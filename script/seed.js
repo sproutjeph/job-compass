@@ -65,8 +65,8 @@ async function seedJobs() {
     const insertedJobs = await Promise.all(
       jobs.map(async (job) => {
         return sql`
-        INSERT INTO jobs (id, company, position, status, jobType, location, date)
-        VALUES (${job.id}, ${job.company}, ${job.position}, ${job.status}, ${job.jobType}, ${job.location}, ${job.date}, ${job.jobLink});
+        INSERT INTO jobs ( company, position, status, jobType, location, date, jobLink)
+        VALUES ( ${job.company}, ${job.position}, ${job.status}, ${job.jobType}, ${job.location}, ${job.date}, ${job.jobLink});
       `;
       })
     );
@@ -84,6 +84,6 @@ async function seedJobs() {
 }
 
 (async () => {
-  await seedUsers();
+  // await seedUsers();
   await seedJobs();
 })();

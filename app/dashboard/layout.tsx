@@ -4,12 +4,12 @@ import { Sidebar } from "@/components/sidebar";
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <section className="relative min-h-full">
-      <div className="hidden h-full lg:flex md:w-[250px] md:flex-col md:fixed md:inset-y-0 z-80">
+      <div className="hidden h-full lg:flex md:w-[250px] md:flex-col md:fixed md:inset-y-0 ">
         <Sidebar />
       </div>
-      <main>
+      <main className="">
         <Navbar />
-        <div className=" lg:pl-64">{children}</div>
+        <div className="lg:pl-64">{children}</div>
       </main>
     </section>
   );
