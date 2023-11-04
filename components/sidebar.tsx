@@ -4,12 +4,13 @@ import Link from "next/link";
 import { sidebarLinks } from "../constants/consants";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
+import UserAvatar from "./user-avatar";
 
 export function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="h-full px-4 bg-accent">
+    <aside className="relative h-full px-4 bg-accent">
       <div className="mt-6 mr-4 text-3xl font-extrabold text-center lg:mt-4">
         𝔍𝔬𝔟ℭ𝔬𝔪𝔭𝔞𝔰𝔰
       </div>
@@ -32,6 +33,12 @@ export function Sidebar() {
           </Link>
         ))}
       </ul>
+      <div className="absolute mt-auto cursor-pointer bottom-8">
+        <div className="flex items-center gap-2">
+          <UserAvatar />
+          <h6 className="text-sm">Jephthah Mbah</h6>
+        </div>
+      </div>
     </aside>
   );
 }

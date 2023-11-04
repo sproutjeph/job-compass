@@ -1,8 +1,4 @@
-import { JobCardSSkeleton } from "@/components/skeletons";
-import Pagination from "@/components/pagination";
-import JobSearch from "@/components/job-search";
-import JobCards from "@/components/job-cards";
-import { fetchJobs } from "@/lib/actions";
+import JobStatsCard from "@/components/job-stats-card";
 import React, { Suspense } from "react";
 
 export default async function Page({
@@ -16,17 +12,29 @@ export default async function Page({
   const page = searchParams?.page || "1";
   const query = searchParams?.query || "";
 
-  const jobs = await fetchJobs(Number(page), query);
-
   return (
-    <main className="p-4 mx-auto max-w-7xl">
-      <div className="grid sm:grid-cols-3 gap-x-4 lg:grid-cols-4">
-        <JobSearch placeHolder="Company Name" />
-      </div>
-      <Suspense fallback={<JobCardSSkeleton />}>
-        <JobCards jobs={jobs?.jobs!} />
-      </Suspense>
-      <Pagination totalPages={jobs?.pages!} />
+    <main className="p-4">
+      <h1 className="text-lg">Good evening JEPHTHAH! </h1>
+      <h6 className="text-xs text-gray-500">
+        {"Here's your job finding summary for today"}
+      </h6>
+      <ul className="grid max-w-2xl grid-cols-2 gap-3 mt-8 sm:grid-cols-3">
+        <JobStatsCard
+          color="bg-green-100"
+          title="Total Interviews"
+          iconColor="text-green-800"
+        />
+        <JobStatsCard
+          color="bg-red-100"
+          title="Total Rejected"
+          iconColor="text-red-800"
+        />
+        <JobStatsCard
+          color="bg-blue-100"
+          title="Total Pending"
+          iconColor="text-blue-800"
+        />
+      </ul>
     </main>
   );
 }

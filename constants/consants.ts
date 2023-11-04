@@ -1,18 +1,29 @@
-import { User, Briefcase, BriefcaseIcon, GitGraph } from "lucide-react";
+import {
+  User,
+  Briefcase,
+  LayoutDashboard,
+  FileBoxIcon,
+  BarChartIcon,
+} from "lucide-react";
 export const sidebarLinks = [
   {
-    label: "All Jobs",
-    icon: Briefcase,
+    label: "Dashboard",
+    icon: LayoutDashboard,
     href: "/dashboard",
   },
   {
+    label: "All Jobs",
+    icon: Briefcase,
+    href: "/dashboard/jobs",
+  },
+  {
     label: "Add Job",
-    icon: BriefcaseIcon,
+    icon: FileBoxIcon,
     href: "/dashboard/add-job",
   },
   {
     label: "Stats",
-    icon: Briefcase,
+    icon: BarChartIcon,
     href: "/dashboard/stats",
   },
   {

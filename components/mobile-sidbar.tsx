@@ -10,6 +10,8 @@ import { usePathname } from "next/navigation";
 import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import UserAvatar from "./user-avatar";
+import { Separator } from "./ui/separator";
 
 const MobileSidebar = () => {
   const pathname = usePathname();
@@ -22,7 +24,7 @@ const MobileSidebar = () => {
         </div>
       </SheetTrigger>
       <SheetContent side="left" className="p-0  w-[250px] bg-accent">
-        <aside className="h-full px-4 bg-accent">
+        <aside className="relative h-full px-4 bg-accent">
           <div className="mt-6 mr-4 text-3xl font-extrabold text-center lg:mt-4">
             𝔍𝔬𝔟ℭ𝔬𝔪𝔭𝔞𝔰𝔰
           </div>
@@ -46,6 +48,12 @@ const MobileSidebar = () => {
               </SheetClose>
             ))}
           </ul>
+          <div className="absolute mt-auto cursor-pointer bottom-12 left-6">
+            <div className="flex items-center gap-2">
+              <UserAvatar />
+              <h6 className="text-sm">Jephthah Mbah</h6>
+            </div>
+          </div>
         </aside>
       </SheetContent>
     </Sheet>
