@@ -8,3 +8,12 @@ export interface IJob {
   date: Date;
   joblink?: string;
 }
+
+export type IJobFields = {
+  company: string;
+  position: string;
+  status: string;
+  jobtype: string;
+  location: string;
+  joblink?: string;
+};
