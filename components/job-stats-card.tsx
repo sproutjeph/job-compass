@@ -1,7 +1,7 @@
 import { Briefcase } from "lucide-react";
 import { Card } from "./ui/card";
-import { FC } from "react";
 import { cn } from "@/lib/utils";
+import { FC } from "react";
 
 interface JobStatsCardProps {
   color: string;
@@ -11,7 +11,7 @@ interface JobStatsCardProps {
 
 const JobStatsCard: FC<JobStatsCardProps> = ({ color, title, iconColor }) => {
   return (
-    <Card className="flex flex-col gap-2 p-4">
+    <Card className="flex flex-col gap-2 p-4 h-fit">
       <div
         className={cn(
           `flex items-center justify-center w-6 h-6  rounded-md`,

@@ -24,18 +24,18 @@ const JobCard: FC<JobCardProps> = ({ job }) => {
           <h5 className="font-bold">{job.company}</h5>
         </div>
       </CardHeader>
-      <Separator className="mb-2" />
-      <CardContent className="grid grid-cols-2 gap-3">
+      <Separator className="mb-3" />
+      <CardContent className="grid grid-cols-2 gap-3 pb-3">
         <div className="flex items-center gap-2">
-          <Send />
+          <Send size={16} />
           <h4 className="text-sm">{job.location}</h4>
         </div>
         <div className="flex items-center gap-2">
-          <Calendar />
+          <Calendar size={16} />
           <h4 className="text-sm">{formatDateToYYYYMMDD(job?.date)}</h4>
         </div>
         <div className="flex items-center gap-2">
-          <Briefcase />
+          <Briefcase size={16} />
           <h4 className="text-sm">{job.jobtype}</h4>
         </div>
 
@@ -43,8 +43,8 @@ const JobCard: FC<JobCardProps> = ({ job }) => {
           {job.status}
         </div>
       </CardContent>
-      <Separator className="mb-2" />
-      <CardFooter className="flex gap-2">
+      <Separator className="mb-3" />
+      <CardFooter className="flex gap-2 pb-3">
         <Button size="sm" className="bg-green-800">
           Edit
         </Button>

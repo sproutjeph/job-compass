@@ -19,13 +19,14 @@ export default async function Page({
   const jobs = await fetchJobs(Number(page), query);
 
   return (
-    <main className="p-4 mx-auto max-w-7xl">
-      <div className="grid sm:grid-cols-3 gap-x-4 lg:grid-cols-4">
+    <main className="p-4 ">
+      <div className="">
         <JobSearch placeHolder="Company Name" />
       </div>
       <Suspense fallback={<JobCardSSkeleton />}>
         <JobCards jobs={jobs?.jobs!} />
       </Suspense>
+
       <Pagination totalPages={jobs?.pages!} />
     </main>
   );
