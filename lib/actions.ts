@@ -1,10 +1,10 @@
 "use server";
 
-import { sql } from "@vercel/postgres";
-import { IJob } from "@/types";
 import { unstable_noStore as noStore } from "next/cache";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+import { sql } from "@vercel/postgres";
+import { IJob } from "@/types";
 
 interface IJobCount {
   total: number;

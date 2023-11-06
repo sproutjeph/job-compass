@@ -1,9 +1,7 @@
-import JobCard from "@/components/job-card";
 import JobStatsCard from "@/components/job-stats-card";
-import { Button } from "@/components/ui/button";
-import { Card, CardFooter } from "@/components/ui/card";
 import UpcomingJob from "@/components/upcoming-job";
-import React, { Suspense } from "react";
+import { Card } from "@/components/ui/card";
+import React from "react";
 
 export default async function Page({
   searchParams,
