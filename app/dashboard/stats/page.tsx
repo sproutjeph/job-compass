@@ -1,3 +1,13 @@
+import CircleChart from "@/components/charts/CircleChart";
+
 export default function Page() {
-  return <div className="">Stats</div>;
+  return (
+    <main>
+      <CircleChart
+        colors={[]}
+        labels={["Pending", "Interviwed"]}
+        series={[1, 2, 3, 4]}
+      />
+    </main>
+  );
 }
